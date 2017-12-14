@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+        <meta charset="utf-8"/>
+        <meta content="initial-scale=1, width=device-width" name="viewport"/>
+    	<script type="text/javascript" src="http://mathcache.s3.amazonaws.com/replacemath.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+            tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}});
+        </script>
+
+
+        <!-- App's own CSS -->
+        <link href="/static/styles.css" rel="stylesheet"/>
+
+        <!-- http://jquery.com/ -->
+        <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+        <!-- http://getbootstrap.com/ -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- https://github.com/corejavascript/typeahead.js/blob/master/doc/jquery_typeahead.md -->
+        <script src="https://cdn.rawgit.com/corejavascript/typeahead.js/master/dist/typeahead.jquery.js"></script>
+
+        <!-- http://handlebarsjs.com/ -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+        <script src="/static/block.js"></script>
+        <script src="/static/arrow.js"></script>
+        <script src="/static/export.js"></script>
+        <script src="/static/scripts.js"></script>
+
+
+    </head>
+    <body>
+            <button id="b1" type="button" class="button" style="position:absolute; top: 100px; left: 100px; z-index:1">
+                Box
+            </button>
+            <button id="b2" type="button" class="button" style="position:absolute; top: 100px; left: 260px; z-index:1">
+                Arrow
+            </button>
+            <button id="b7" type="button" class="button" style="position:absolute; top: 250px; left: 100px; z-index:1">
+                Select
+            </button>
+            <button id="b8" type="button" class="button" style="position:absolute; top: 250px; left: 260px; z-index:1">
+                Delete
+            </button>
+            <button id="export" type="button" class="button2" style="position:absolute; top: 400px; left: 100px; z-index:1">
+                Export as Latex
+            </button>
+
+
+            <div style="position:absolute; top: 15px; left: 450px; z-index:1">
+                <h1>
+                    <b>Commutative Diagram Drawer</b>
+                </h1>
+            </div>
+
+            <div style="position:absolute; top: 700px; left: 120px; z-index:1">
+                <h2>Instructions: Make sure to have "\usepackage{tikz} \usepackage{tikz-cd} <br>
+                \usetikzlibrary{matrix, calc, arrows}" in your preamble</h2>
+            </div>
+
+            <div id="images" style="position:absolute; top: 100px; left: 440px; z-index:1">
+                <canvas id="myCanvas" width="600" height="600" onclick="draw(event)" tabindex=0></canvas>
+            </div>
+
+            <pre>
+            <div id="textDiv" class="output" style="position:absolute; top: 100px; width: 600px; left: 1070px; border: 1px solid #000; height: 700px" >
+            <div id="nested"></div>
+            </div>
+            </pre>
+
+
+    </body>
+
+</html>
